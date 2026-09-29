@@ -1,0 +1,36 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gha-expr"
+version = "0.1.0"
+description = "Pure-Python evaluator for GitHub Actions ${{ }} expressions, matching the official @actions/expressions implementation."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "LICENSE-actions-languageservices", "LICENSE-actions-runner"]
+authors = [{name = "__AUTHOR__"}]
+keywords = ["github-actions", "expressions", "workflow", "ci", "evaluator"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Typing :: Typed",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.10"]
+
+[project.urls]
+Repository = "https://github.com/__GH_OWNER__/gha-expr"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gha_expr"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+
+[tool.mypy]
+strict = true
+files = ["src", "tests", "examples", "bench"]

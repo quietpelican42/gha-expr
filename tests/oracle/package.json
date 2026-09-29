@@ -1,0 +1,9 @@
+{
+  "name": "gha-expr-oracle",
+  "private": true,
+  "type": "module",
+  "description": "Runs @actions/expressions as the differential oracle for gha-expr tests.",
+  "dependencies": {
+    "@actions/expressions": "0.3.61"
+  }
+}
